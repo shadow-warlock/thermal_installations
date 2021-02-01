@@ -46,7 +46,7 @@ let books = {
     " 12": "ОРГАНИЗАЦИОННЫЕ МЕРОПРИЯТИЯ, ОБЕСПЕЧИВАЮЩИЕ БЕЗОПАСНОСТЬ РАБОТ ПРИ ЭКСПЛУАТАЦИИ ТЭУ",
     " 13": "ОБЕСПЕЧЕНИЕ БЕЗОПАСНОЙ ЭКСПЛУАТАЦИИ ТЭУ"
 };
-
+let page = findGetParameter('page') ?? Object.keys(books)[0].substr(1);
 let contents = "<ul>";
 for (let key in books){
     contents += '<li class="clearfix"><a href="?page='+key.substr(1)+'">'+key+'. '+books[key]+'</a></li>'
@@ -74,4 +74,3 @@ function findGetParameter(parameterName) {
         });
     return result;
 }
-let page = findGetParameter('page') ?? Object.keys(books)[0];
